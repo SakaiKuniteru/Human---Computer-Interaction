@@ -162,7 +162,7 @@ def forgot(request):
             OTP.objects.create(user=user, token=otp)
             subject = "Tài khoản của bạn sẽ được đổi mật khẩu khi bạn nhập OTP"
             message = f"Chào bạn {username} thân mến,\n\nChúng tôi rất vui mừng thông báo về một sự kiện đặc biệt trên tài khoản của bạn tại Thư viện VJULIB.\n\nĐể đảm bảo an toàn và bảo mật cho bạn, chúng tôi đã gửi một Mã OTP đặc biệt. Hãy nhập mã này sau khi bạn đăng nhập:\n\nMã OTP: {otp}\n\nNếu đây không phải là bạn, xin đừng lo lắng. Bạn có thể bỏ qua thông báo này hoặc liên hệ ngay với chúng tôi. Chúng tôi sẵn sàng hỗ trợ bạn ngay lập tức và giải đáp mọi thắc mắc.\n\nChúng tôi xin gửi lời cảm ơn sâu sắc nhất đến bạn vì đã tin tưởng và lựa chọn sử dụng dịch vụ của Thư viện VJULIB.\n\nNếu có bất kỳ câu hỏi hoặc nhu cầu hỗ trợ nào khác, Đội Ngũ VJULIB luôn sẵn lòng để giúp đỡ bạn.\n\nTrân trọng,\nĐội Ngũ VJULIB"
-            from_email = 'vjulib@gmail.com'
+            from_email = 'quochuyvju@gmail.com'
             recipient_list = [email]
             send_mail(subject, message, from_email, recipient_list)
             return redirect("confirm")
